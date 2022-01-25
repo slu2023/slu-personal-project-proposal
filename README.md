@@ -23,3 +23,5 @@ At a high level the High Score Tracker in the following way:
 
 ## Flowchart
 
+![Image Text](MADLIPSFLOWCHART.png)
+
