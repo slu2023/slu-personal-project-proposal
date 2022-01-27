@@ -3,7 +3,7 @@ using System.IO;
 
 namespace PersonalityQuiz
 {
-    class PersonalityQuiz
+    class TestGetValidAnswer
     {
 
     }
