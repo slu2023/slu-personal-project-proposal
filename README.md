@@ -25,7 +25,7 @@ At a high level, the Personality Quiz works in the following way:
 
 ## Flowchart
 
-![Image Text](FLOWCHART.epgz)
+![Image Text](FLOWCHART.png)
 
 ## Methods
 
@@ -38,13 +38,13 @@ List<string> results);
 
 It is important for this program to group together questions and answers.  To manage this, there's a class being created and has two properties.  A string Question, which will be the question being asked and a List<string> Answers, which will be a list of the possible answers to that questions.
 
-![Image Text](Question.epgz)
+![Image Text](Question.png)
 
 ### static int AskQuestion(Question q)
 
 DisplayDisplays the specified question along with each of its answers. Then, prompts the user to select one of the answers. Finally, returns the index of the answer the player selected.
 
-![Image Text](AskQuestion.epgz)
+![Image Text](AskQuestion.png)
 
 1. Display the question.
    
@@ -58,7 +58,7 @@ DisplayDisplays the specified question along with each of its answers. Then, pro
 
 Given a list of answers, prompts the user to enter a number corresponding to one of the answers. If the user enters a number that is not within the specified range, the user is asked to enter another value.
 
-![Image Text](GetValidAnswer.epgz)
+![Image Text](GetValidAnswer.png)
 
 1. Validate that there is at least 1 possible answer.
    
@@ -80,7 +80,7 @@ Given a list of answers, prompts the user to enter a number corresponding to one
 
 Given two lists, one representing the scores for each possible result and one representing each possible result, determines which score is the highest and returns the corresponding string from the results list.
 
-![Image Text](GetResult.epgz)
+![Image Text](GetResult.png)
 
 1. Initialize highest to 0. This variable represents the highest score we have seen so far.
    
