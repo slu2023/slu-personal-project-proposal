@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic; // Feedback(jcollard 2022-01-27): This line makes it so you can use the List data type.
 
 namespace slu_personal_project_proposal
 {
@@ -6,9 +7,30 @@ namespace slu_personal_project_proposal
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // Feedback(jcollard 2022-01-27): 
+            // Here is an example of how you would create a question:
+            
+            // First create a new Question()
+            Question simpleQuestion = new Question();
+
+            // Next, set the question to be an actual question.
+            simpleQuestion.question = "How much wood could a woodchuck chuck if a woodchuck could chuck wood?";
+
+            // Next, add answers to the question
+            simpleQuestion.answers.Add("As much wood as a woodchuck could chuck if a woodchuck could chuck wood.");
+            simpleQuestion.answers.Add("Uh... 14?");
+            simpleQuestion.answers.Add("None. Clearly the woodchuck is a manifestation of all your fears.");
+
+            // Finally, you can display the question and answers
+            Console.WriteLine(simpleQuestion.question);
+
+            // For your final solution, you will loop through these rather than manually selecting each one.
+            Console.WriteLine($"1. {simpleQuestion.answers[0]}");
+            Console.WriteLine($"2. {simpleQuestion.answers[1]}");
+            Console.WriteLine($"3. {simpleQuestion.answers[2]}");
         }
 
+        // TODO (jcollard 2022-01-27): Add a documentation comment
         public static string PersonalityQuiz()
         {
 
@@ -22,7 +44,8 @@ namespace slu_personal_project_proposal
              return null;
         }
 
-        static int GetValidAnswer (List <string> answers)
+        // TODO (jcollard 2022-01-27): Add a documentation comment
+        static int GetValidAnswer (List<string> answers)
         {
             // * If answers.Length < 1, disply "select an option 1 to {answers.Length}".  int choice = int.Parse(ReadLine())
             // ** If Choice > 0 AND Choice < = answers.Length, return choice
@@ -41,10 +64,19 @@ namespace slu_personal_project_proposal
         /// <returns>The positive number the user chose</returns>
         public static int GetPositiveInt(string prompt)
         {
+            // TODO (jcollard 2022-01-27): Add step-by-step algorithm comment
             return -1;
         }
 
 
+    }
+
+    // Feedback(jcollard 2022-01-27): I've added in the Question class for you.
+    // This class stores both a question string and a list of answers together!
+    class Question 
+    {
+        public string question;
+        public List<string> answers = new List<string>();
     }
 }
 
