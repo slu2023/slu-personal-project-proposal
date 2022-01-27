@@ -9,7 +9,7 @@ namespace slu_personal_project_proposal
         {
             // Feedback(jcollard 2022-01-27): 
             // Here is an example of how you would create a question:
-            
+
             // First create a new Question()
             Question simpleQuestion = new Question();
 
@@ -41,11 +41,32 @@ namespace slu_personal_project_proposal
             //    *Otherwise display the result calculated by the score refering to the characters
             // 4. Prompt user to answer the question
             // 5. Use the user's answer to increase on of the score
-             return null;
+            return null;
         }
 
-        // TODO (jcollard 2022-01-27): Add a documentation comment
-        static int GetValidAnswer (List<string> answers)
+        /// <summary>
+        /// Given a series of questions to the user, score the points when the player enters an answer.  
+        /// Looping until all the questions has been displayed and answered.
+        /// </summary>
+        /// <param name="prompt">The message to display to the user</param>
+        /// <returns>The positive number the user chose</returns>
+        static int AskQuestion(Question q)
+        {
+            // 1. Display q.Question
+            // 2. Loop through for each answer in q.Question
+            // 3. Display answer
+            // 4. Shows int selected = GetValidAnswer(q.Answers)
+            return -1;
+        }
+
+
+        /// <summary>
+        /// Storing the valid answers from the player
+        /// Score the points according to the play's response.
+        /// </summary>
+        /// <param name="prompt">The message to display to the user</param>
+        /// <returns>The positive number the user chose</returns>
+        static int GetValidAnswer(List<string> answers)
         {
             // * If answers.Length < 1, disply "select an option 1 to {answers.Length}".  int choice = int.Parse(ReadLine())
             // ** If Choice > 0 AND Choice < = answers.Length, return choice
@@ -55,28 +76,31 @@ namespace slu_personal_project_proposal
         }
 
         /// <summary>
-        /// Given a series of questions to the user, score the points when the player enters an answer.  
-        /// Looping until all the questions has been displayed and answered.
-        /// Score the points according to the play's response.
         /// Display the score the play gets.
         /// </summary>
         /// <param name="prompt">The message to display to the user</param>
         /// <returns>The positive number the user chose</returns>
-        public static int GetPositiveInt(string prompt)
+        static string GetResult(List<int> Scores, List<string> Results)
         {
-            // TODO (jcollard 2022-01-27): Add step-by-step algorithm comment
+            // 1. int highest = 0
+            // 2. int highest lx = 0
+            // 3. int current lx = 0
+            // 4. * If currect lx < Scores.Length, display int score = Scores[currlx]
+            //    ** If Score > highest, highest = Score, and highestlx = Currlx, therefore Currlx = Currlx +1
+            //    ** Otherwise, Currlx = Currlx + 1
+            //    * Otherwise, return Results[highestlx]
             return -1;
         }
 
 
-    }
+        // Feedback(jcollard 2022-01-27): I've added in the Question class for you.
+        // This class stores both a question string and a list of answers together!
+        class Question
+        {
+            public string question;
+            public List<string> answers = new List<string>();
+        }
 
-    // Feedback(jcollard 2022-01-27): I've added in the Question class for you.
-    // This class stores both a question string and a list of answers together!
-    class Question 
-    {
-        public string question;
-        public List<string> answers = new List<string>();
     }
 }
 
