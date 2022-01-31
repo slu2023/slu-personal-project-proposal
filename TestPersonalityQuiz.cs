@@ -5,6 +5,9 @@ namespace PersonalityQuiz
 {
     class TestPersonalityQuiz
     {
-
+        public static bool RunTest()
+        {
+            return false;
+        }
     }
 }

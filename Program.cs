@@ -28,9 +28,43 @@ namespace slu_personal_project_proposal
             Console.WriteLine($"1. {simpleQuestion.answers[0]}");
             Console.WriteLine($"2. {simpleQuestion.answers[1]}");
             Console.WriteLine($"3. {simpleQuestion.answers[2]}");
+
+            static void Main(string[] args)
+            {
+                // Checks if the user added a command line argument
+                // Also checks if the first argument is "test"
+                if (args.Length > 0 && args[0] == "test")
+                {
+                    TestAll();
+                    return; // Exits the program
+                }
+                // Otherwise, the program continues executing
+            }
         }
 
-        // TODO (jcollard 2022-01-27): Add a documentation comment
+        public static void TestAll()
+        {
+            bool testPersonalityQuiz = testPersonalityQuiz.RunTest();
+            Console.WriteLine($"Test PersonalityQuiz(options); {testLoadFile}");
+
+            bool testAskQuestion = testAskQuestion.RunTest();
+            Console.WriteLine($"Test AskQuestion(options); {testLoadFile}");
+
+            bool testGetValidAnswer = testGetValidAnswer.RunTest();
+            Console.WriteLine($"Test GetValidAnswer(options); {testLoadFile}");
+
+            bool testGetResult = testGetResult.RunTest();
+            Console.WriteLine($"Test GetResult(options); {testLoadFile}");
+        }
+
+        /// <summary>
+        /// The player has a score of 0 at the beginning 
+        /// Looping until all the questions has been displayed to the user
+        /// Get the player to answer the questions
+        /// Determine the score base on the answer the player gives
+        /// </summary>
+        /// <param name="prompt">The message to display to the user</param>
+        /// <returns>The positive number the user chose</returns>        
         public static string PersonalityQuiz()
         {
 
@@ -100,6 +134,8 @@ namespace slu_personal_project_proposal
             public string question;
             public List<string> answers = new List<string>();
         }
+
+    
 
     }
 }
