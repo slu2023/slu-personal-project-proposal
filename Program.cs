@@ -7,6 +7,14 @@ namespace slu_personal_project_proposal
     {
         static void Main(string[] args)
         {
+            // Checks if the user added a command line argument
+            // Also checks if the first argument is "test"
+            if (args.Length > 0 && args[0] == "test")
+            {
+                TestAll();
+                return; // Exits the program
+            }
+            // Otherwise, the program continues executing
             // Feedback(jcollard 2022-01-27): 
             // Here is an example of how you would create a question:
 
@@ -29,32 +37,22 @@ namespace slu_personal_project_proposal
             Console.WriteLine($"2. {simpleQuestion.answers[1]}");
             Console.WriteLine($"3. {simpleQuestion.answers[2]}");
 
-            static void Main(string[] args)
-            {
-                // Checks if the user added a command line argument
-                // Also checks if the first argument is "test"
-                if (args.Length > 0 && args[0] == "test")
-                {
-                    TestAll();
-                    return; // Exits the program
-                }
-                // Otherwise, the program continues executing
-            }
+
         }
 
         public static void TestAll()
         {
-            bool testPersonalityQuiz = testPersonalityQuiz.RunTest();
-            Console.WriteLine($"Test PersonalityQuiz(options); {testLoadFile}");
+            bool testPersonalityQuiz = TestPersonalityQuiz.RunTest();
+            Console.WriteLine($"Test PersonalityQuiz(filename); {testPersonalityQuiz}");
 
-            bool testAskQuestion = testAskQuestion.RunTest();
-            Console.WriteLine($"Test AskQuestion(options); {testLoadFile}");
+            bool testAskQuestion = TestAskQuestion.RunTest();
+            Console.WriteLine($"Test AskQuestion(options); {testPersonalityQuiz}");
 
-            bool testGetValidAnswer = testGetValidAnswer.RunTest();
-            Console.WriteLine($"Test GetValidAnswer(options); {testLoadFile}");
+            bool testGetValidAnswer = TestGetValidAnswer.RunTest();
+            Console.WriteLine($"Test GetValidAnswer(options); {testPersonalityQuiz}");
 
-            bool testGetResult = testGetResult.RunTest();
-            Console.WriteLine($"Test GetResult(options); {testLoadFile}");
+            bool testGetResult = TestGetResult.RunTest();
+            Console.WriteLine($"Test GetResult(options); {testPersonalityQuiz}");
         }
 
         /// <summary>
@@ -123,7 +121,7 @@ namespace slu_personal_project_proposal
             //    ** If Score > highest, highest = Score, and highestlx = Currlx, therefore Currlx = Currlx +1
             //    ** Otherwise, Currlx = Currlx + 1
             //    * Otherwise, return Results[highestlx]
-            return -1;
+            return null;
         }
 
 
@@ -135,7 +133,7 @@ namespace slu_personal_project_proposal
             public List<string> answers = new List<string>();
         }
 
-    
+
 
     }
 }

@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace PersonalityQuiz
+namespace slu_personal_project_proposal
 {
     class TestGetResult
     {
