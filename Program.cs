@@ -112,7 +112,7 @@ namespace slu_personal_project_proposal
         /// </summary>
         /// <param name="prompt">The message to display to the user</param>
         /// <returns>The positive number the user chose</returns>
-        static string GetResult(List<int> Scores, List<string> Results)
+        public static string GetResult(List<int> Scores, List<string> Results)
         {
             // 1. int highest = 0
             // 2. int highest lx = 0
@@ -123,18 +123,14 @@ namespace slu_personal_project_proposal
             //    * Otherwise, return Results[highestlx]
             return null;
         }
+    }
 
-
-        // Feedback(jcollard 2022-01-27): I've added in the Question class for you.
-        // This class stores both a question string and a list of answers together!
-        class Question
-        {
-            public string question;
-            public List<string> answers = new List<string>();
-        }
-
-
-
+    // Feedback(jcollard 2022-01-27): I've added in the Question class for you.
+    // This class stores both a question string and a list of answers together!
+    public class Question
+    {
+        public string question;
+        public List<string> answers = new List<string>();
     }
 }
 
