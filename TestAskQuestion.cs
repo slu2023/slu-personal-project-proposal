@@ -39,40 +39,42 @@ namespace slu_personal_project_proposal
             
             return false;
 
-            // // Load test_scores.txt.
+            // Load test_scores.txt.
 
-            // List<string> scores = Program.AskQuestion("test_scores.txt")..ToList();
+            List<string> scores = Program.AskQuestion("test_scores.txt")..ToList();
 
-            // // This file contains 3 lines
-            // if(scores.Count !=3)
-            // {
-            //     Console.Error.WriteLine("The file test_scores should have 3 lines but that was not the cases.");
-            //     return false;
-            // }
+            // This file contains 3 lines
+            if(scores.Count !=3)
+            {
+                Console.Error.WriteLine("The file test_scores should have 3 lines but that was not the cases.");
+                return false;
+            }
 
-            // // The first line of the file should be "TestQuestion"
-            // if(scores[0] !="TestQuestion")
-            // {
-            //     Console.Error.WriteLine("The first file should have been \"QuestionFirst\".");
-            //     return false;
-            // }
+            // The first line of the file should be "TestQuestion"
+            if(scores[0] !="TestQuestion")
+            {
+                Console.Error.WriteLine("The first file should have been \"QuestionFirst\".");
+                return false;
+            }
 
-            // try
-            // {
-            //     // This should produce an exception
-            //     Program.AskQuestion("NotAFile.txt");
+            try
+            {
+                // This should produce an exception
+                Program.AskQuestion("NotAFile.txt");
 
-            //     // If we get to this line, it means there was not an exception
-            //     Console.Error.WriteLine("Expected an exception from loading \"NotAFile.txt\"");
-            //     return false;
-            // }
-            // catch (Exception e)
-            // {
-            //     // Ignore the error
-            // }
+                // If we get to this line, it means there was not an exception
+                Console.Error.WriteLine("Expected an exception from loading \"NotAFile.txt\"");
+                return false;
+            }
+            catch (Exception e)
+            {
+                // Ignore the error
+            }
 
             // // If we made it this far, everything seems to be working so we return true.
-            // return true;
+            return true;
+
+
         }
     }
 }
