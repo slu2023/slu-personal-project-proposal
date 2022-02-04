@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace slu_personal_project_proposal
@@ -9,7 +10,25 @@ namespace slu_personal_project_proposal
         {
             // TODO(jcollard 2022-02-03): This can be tested very similarly to AskQuestion.
             // This is because AskQuestion uses this method to get a valid answer.
-            return false;
+            
+            List<string> testAnswers;
+
+            testAnswers = new List<string>();
+            testAnswers.Add("Myself");
+            testAnswers.Add("Others");
+            testAnswers.Add("idk");
+
+            string result = Program.GetValidAnswer(List<string>Answers);
+
+            if (result !="Myself")
+            {
+                Console.Error.WriteLine($"Failure: Expected result to be Myself but it was {result}");
+                return false;
+            }
+
+            
+            
+            return true;
         }
     }
 }

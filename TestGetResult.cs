@@ -64,10 +64,35 @@ namespace slu_personal_project_proposal
             // * What should happen if there are more than 3 possible outcomes?
             // * What other cases might there be?
 
+
             
 
             // TODO(jcollard 2022-02-03): Finally, if all of the results are as expected, you should return true.
-            return false;
+            
+            List<int> testScores1;
+
+            testScores1 = new List<int>();
+            testScores1.Add(20);
+            testScores1.Add(35);
+            testScores1.Add(41);
+
+            List<string> testResults1;
+
+            testResults1 = new List<String>();
+            testResults1.Add("CSP");
+            testResults1.Add("CSA");
+            testResults1.Add("POST");
+
+            string result1 = Program.GetResult(testScores1, testResults1);
+
+            if (result1 !="POST")
+            {
+                Console.Error.WriteLine($"Failure: Expected result to be POST, but result is {result}");
+                return false;
+            }
+
+            
+            return true;
         }
     }
 }

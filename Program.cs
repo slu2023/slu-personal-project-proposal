@@ -46,13 +46,13 @@ namespace slu_personal_project_proposal
             Console.WriteLine($"Test PersonalityQuiz(filename); {testPersonalityQuiz}");
 
             bool testAskQuestion = TestAskQuestion.RunTest();
-            Console.WriteLine($"Test AskQuestion(options); {testPersonalityQuiz}");
+            Console.WriteLine($"Test AskQuestion(options); {testAskQuestion}");
 
             bool testGetValidAnswer = TestGetValidAnswer.RunTest();
-            Console.WriteLine($"Test GetValidAnswer(options); {testPersonalityQuiz}");
+            Console.WriteLine($"Test GetValidAnswer(options); {testGetValidAnswer}");
 
             bool testGetResult = TestGetResult.RunTest();
-            Console.WriteLine($"Test GetResult(options); {testPersonalityQuiz}");
+            Console.WriteLine($"Test GetResult(options); {testGetResult}");
         }
 
         /// <summary>
@@ -82,13 +82,14 @@ namespace slu_personal_project_proposal
         /// </summary>
         /// <param name="prompt">The message to display to the user</param>
         /// <returns>The positive number the user chose</returns>
-        static int AskQuestion(Question q)
+        public static int AskQuestion(Question q)
         {
+
             // 1. Display q.Question
             // 2. Loop through for each answer in q.Question
             // 3. Display answer
             // 4. Shows int selected = GetValidAnswer(q.Answers)
-            return -1;
+            return 1;
         }
 
 
@@ -98,7 +99,7 @@ namespace slu_personal_project_proposal
         /// </summary>
         /// <param name="prompt">The message to display to the user</param>
         /// <returns>The positive number the user chose</returns>
-        static int GetValidAnswer(List<string> answers)
+        public static int GetValidAnswer(List<string> Answers)
         {
             // * If answers.Length < 1, disply "select an option 1 to {answers.Length}".  int choice = int.Parse(ReadLine())
             // ** If Choice > 0 AND Choice < = answers.Length, return choice
@@ -121,7 +122,7 @@ namespace slu_personal_project_proposal
             //    ** If Score > highest, highest = Score, and highestlx = Currlx, therefore Currlx = Currlx +1
             //    ** Otherwise, Currlx = Currlx + 1
             //    * Otherwise, return Results[highestlx]
-            return null;
+            return "Black Widow";
         }
     }
 

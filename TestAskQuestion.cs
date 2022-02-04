@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace slu_personal_project_proposal
@@ -18,10 +19,12 @@ namespace slu_personal_project_proposal
             // Add using `using System.Collections.Generic;` to the top of this file
             // That said, I don't think you actually need this list here.
             List<string> options = new List<string>();
+
             Question testQuestion = new Question();
-            testQuestion.question = "Some question here";
-            testQuestion.answers.Add("Some answer");
-            testQuestion.answers.Add("Some other answer");
+            testQuestion.question = "How are you feeling today?";
+            testQuestion.answers.Add("GREAT!");
+            testQuestion.answers.Add("So So");
+            testQuestion.answers.Add("Kinda ok");
             
             // Then, create a message to be displayed to the tester. What should the method
             // write to the console when you pass testQuestion as an argument?
@@ -41,7 +44,32 @@ namespace slu_personal_project_proposal
             // 2. The AskQuestion method expects to be passed a `Question`. `options` is a `List<string>`. Instead, you want
             //    to change this to `AskQuestion(testQuestion)`. The type of testQuesiton is `Question` which is what AskQuestion
             //    expects.
-            int result = Program.AskQuestion(options);
+            int result = Program.AskQuestion(testQuestion);
+            int expected = 1;
+
+            if (result != expected)
+            {
+                Console.Error.WriteLine($"Failure: Expected {expected} but result was {result}.");
+                return false;
+            }
+
+            testQuestion = new Question();
+            testQuestion.question = "What's your age range?";
+            testQuestion.answers.Add("1-18");
+            testQuestion.answers.Add("19-25");
+            testQuestion.answers.Add("over 25");
+
+            Console.WriteLine("You should see 'What's your age range?'");
+            Console.WriteLine("Expecting player to enter an input: 2");
+
+            int result1 = Program.AskQuestion(testQuestion);
+            int expected1 = 2;
+
+            if (result1 !=expected1)
+            {
+                Console.Error.WriteLine($"Failure: Expected {expected} but result was {result}.");
+                return false;
+            }
             
             // Then we check that the result is equal to 1 because that is what we told the tester to enter.
             // 
@@ -51,39 +79,39 @@ namespace slu_personal_project_proposal
             Console.WriteLine($"The method returned {result}.");
             Console.WriteLine("Does this method appear to be working?");
             
-            return false;
+            return true;
 
             // Load test_scores.txt.
 
-            List<string> scores = Program.AskQuestion("test_scores.txt")..ToList();
+            // List<string> scores = Program.AskQuestion("test_scores.txt")..ToList();
 
             // This file contains 3 lines
-            if(scores.Count !=3)
-            {
-                Console.Error.WriteLine("The file test_scores should have 3 lines but that was not the cases.");
-                return false;
-            }
+            // if(scores.Count !=3)
+            // {
+            //     Console.Error.WriteLine("The file test_scores should have 3 lines but that was not the cases.");
+            //     return false;
+            // }
 
-            // The first line of the file should be "TestQuestion"
-            if(scores[0] !="TestQuestion")
-            {
-                Console.Error.WriteLine("The first file should have been \"QuestionFirst\".");
-                return false;
-            }
+            // // The first line of the file should be "TestQuestion"
+            // if(scores[0] !="TestQuestion")
+            // {
+            //     Console.Error.WriteLine("The first file should have been \"QuestionFirst\".");
+            //     return false;
+            // }
 
-            try
-            {
-                // This should produce an exception
-                Program.AskQuestion("NotAFile.txt");
+            // try
+            // {
+            //     // This should produce an exception
+            //     Program.AskQuestion("NotAFile.txt");
 
-                // If we get to this line, it means there was not an exception
-                Console.Error.WriteLine("Expected an exception from loading \"NotAFile.txt\"");
-                return false;
-            }
-            catch (Exception e)
-            {
-                // Ignore the error
-            }
+            //     // If we get to this line, it means there was not an exception
+            //     Console.Error.WriteLine("Expected an exception from loading \"NotAFile.txt\"");
+            //     return false;
+            // }
+            // catch (Exception e)
+            // {
+            //     // Ignore the error
+            // }
 
             // // If we made it this far, everything seems to be working so we return true.
             return true;
