@@ -18,11 +18,12 @@ namespace slu_personal_project_proposal
             testAnswers.Add("Others");
             testAnswers.Add("idk");
 
-            string result = Program.GetValidAnswer(List<string>Answers);
+            int result1 = Program.GetValidAnswer(testAnswers);
+            int expected3 = 1;
 
-            if (result !="Myself")
+            if (result1 != expected3)
             {
-                Console.Error.WriteLine($"Failure: Expected result to be Myself but it was {result}");
+                Console.Error.WriteLine($"Failure: Expected result to be Myself but it was {result1}");
                 return false;
             }
 
