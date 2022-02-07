@@ -10,6 +10,8 @@ namespace slu_personal_project_proposal
         {
             // TODO(jcollard 2022-02-03): This can be tested very similarly to AskQuestion.
             // This is because AskQuestion uses this method to get a valid answer.
+
+            // The answer the player types is going to affect the results they are getting.
             
             List<string> testAnswers;
 
