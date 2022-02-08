@@ -93,17 +93,17 @@ namespace slu_personal_project_proposal
 
             List<int> testScores2;
 
-            testScores1 = new List<int>();
-            testScores1.Add(2);
-            testScores1.Add(3);
-            testScores1.Add(4);
+            testScores2 = new List<int>();
+            testScores2.Add(2);
+            testScores2.Add(3);
+            testScores2.Add(4);
 
             List<string> testResults2;
 
-            testResults1 = new List<String>();
-            testResults1.Add("BOYS");
-            testResults1.Add("GIRLS");
-            testResults1.Add("CHILDREN");
+            testResults2 = new List<String>();
+            testResults2.Add("BOYS");
+            testResults2.Add("GIRLS");
+            testResults2.Add("CHILDREN");
 
             string result2 = Program.GetResult(testScores2, testResults2);
 
@@ -115,17 +115,17 @@ namespace slu_personal_project_proposal
 
             List<int> testScores3;
 
-            testScores1 = new List<int>();
-            testScores1.Add(0);
-            testScores1.Add(0);
-            testScores1.Add(7);
+            testScores3 = new List<int>();
+            testScores3.Add(0);
+            testScores3.Add(0);
+            testScores3.Add(7);
 
             List<string> testResults3;
 
-            testResults1 = new List<String>();
-            testResults1.Add("SMART");
-            testResults1.Add("KIND");
-            testResults1.Add("BOTH");
+            testResults3 = new List<String>();
+            testResults3.Add("SMART");
+            testResults3.Add("KIND");
+            testResults3.Add("BOTH");
 
             string result3 = Program.GetResult(testScores3, testResults3);
 
@@ -137,17 +137,17 @@ namespace slu_personal_project_proposal
 
             List<int> testScores4;
 
-            testScores1 = new List<int>();
-            testScores1.Add(17);
-            testScores1.Add(18);
-            testScores1.Add(15);
+            testScores4 = new List<int>();
+            testScores4.Add(17);
+            testScores4.Add(18);
+            testScores4.Add(15);
 
             List<string> testResults4;
 
-            testResults1 = new List<String>();
-            testResults1.Add("MATH&SCIENCE");
-            testResults1.Add("LANGUAGE&HISTORY");
-            testResults1.Add("ART&FILM");
+            testResults4 = new List<String>();
+            testResults4.Add("MATH&SCIENCE");
+            testResults4.Add("LANGUAGE&HISTORY");
+            testResults4.Add("ART&FILM");
 
             string result4 = Program.GetResult(testScores4, testResults4);
 
