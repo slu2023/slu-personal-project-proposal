@@ -79,7 +79,7 @@ namespace slu_personal_project_proposal
             Console.WriteLine($"The method returned {result}.");
             Console.WriteLine("Does this method appear to be working?");
             
-            return true;
+            return false;
 
             // Load test_scores.txt.
 
@@ -114,8 +114,8 @@ namespace slu_personal_project_proposal
             // }
 
             // // If we made it this far, everything seems to be working so we return true.
-            return true;
-
+    
+        return true;
 
         }
     }
