@@ -89,6 +89,16 @@ namespace slu_personal_project_proposal
             // 2. Loop through for each answer in q.Question
             // 3. Display answer
             // 4. Shows int selected = GetValidAnswer(q.Answers)
+
+            // TODO(jcollard 2022-02-10): Implement this method second.
+            // Here is an example that is similar to what you need to do:
+            // https://jcollard.github.io/IntroToCSharpSite/examples/display-options
+            //
+            // In your version, you will be looping through `q.answers` rather than `options`
+            // After you've displayed all of the options, you need to use `GetValidAnswer` to
+            // get the users response.
+            // Finally, return the users response.
+
             return 1;
         }
 
@@ -105,6 +115,14 @@ namespace slu_personal_project_proposal
             // ** If Choice > 0 AND Choice < = answers.Length, return choice
             // ** Otherwise, display "Invalid choice"
             // * Otherwise, throw new Exception ("Must have at least one answer.")
+
+            // TODO(jcolalrd 2022-02-10): Implement this method first
+            // Here is an example that is similar to what you are doing:
+            // https://jcollard.github.io/IntroToCSharpSite/examples/read-input
+            //
+            // In the example, the code validates the input is greater than 1000.
+            // Your solution should validate that the number is greater than 0 and less or equal to Answers.Count
+
             return -1;
         }
 
@@ -122,6 +140,15 @@ namespace slu_personal_project_proposal
             //    ** If Score > highest, highest = Score, and highestlx = Currlx, therefore Currlx = Currlx +1
             //    ** Otherwise, Currlx = Currlx + 1
             //    * Otherwise, return Results[highestlx]
+
+            // TODO(jcollard 2022-02-10): Complete this method last Here is an
+            // example showing how to use two lists to find data associated
+            // between them:
+            // https://jcollard.github.io/IntroToCSharpSite/examples/association-list
+            //
+            // In your example, you will be searching for the highest scoring
+            // result rather than the shortest person
+
             return "Black Widow";
         }
     }

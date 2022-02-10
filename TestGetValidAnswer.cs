@@ -20,6 +20,12 @@ namespace slu_personal_project_proposal
             testAnswers.Add("Others");
             testAnswers.Add("idk");
 
+            // TODO(jcollard 2022-02-10): For this type of test, you need to provide user instructions
+            // for what they expect to see and what they should enter. For example:
+
+            Console.WriteLine("1. Enter 7. This will be an invalid input.");
+            Console.WriteLine("2. Enter 2. This will be valid");
+
             int result = Program.GetValidAnswer(testAnswers);
             int expected = 1;
 
@@ -36,6 +42,8 @@ namespace slu_personal_project_proposal
             testAnswers1.Add("Others");
             testAnswers1.Add("idk");
 
+            // TODO(jcollard 2022-02-10): Give instructions to your testser
+
             int result1 = Program.GetValidAnswer(testAnswers);
             int expected1 = 0;
 
@@ -51,6 +59,8 @@ namespace slu_personal_project_proposal
             testAnswers2.Add("Myself");
             testAnswers2.Add("Others");
             testAnswers2.Add("idk");
+
+            // TODO(jcollard 2022-02-10): Give instructions to your testser
 
             int result2 = Program.GetValidAnswer(testAnswers);
             int expected2 = -1;
