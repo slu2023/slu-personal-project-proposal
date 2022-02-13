@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic; // Feedback(jcollard 2022-01-27): This line makes it so you can use the List data type.
+using System.Collections.Generic; // Feedback(jcollard 2022-01-27): This line makes it so you can use the List data type
 
 namespace slu_personal_project_proposal
 {
@@ -14,28 +14,7 @@ namespace slu_personal_project_proposal
                 TestAll();
                 return; // Exits the program
             }
-            // Otherwise, the program continues executing
-            // Feedback(jcollard 2022-01-27): 
-            // Here is an example of how you would create a question:
-
-            // First create a new Question()
-            Question simpleQuestion = new Question();
-
-            // Next, set the question to be an actual question.
-            simpleQuestion.question = "How much wood could a woodchuck chuck if a woodchuck could chuck wood?";
-
-            // Next, add answers to the question
-            simpleQuestion.answers.Add("As much wood as a woodchuck could chuck if a woodchuck could chuck wood.");
-            simpleQuestion.answers.Add("Uh... 14?");
-            simpleQuestion.answers.Add("None. Clearly the woodchuck is a manifestation of all your fears.");
-
-            // Finally, you can display the question and answers
-            Console.WriteLine(simpleQuestion.question);
-
-            // For your final solution, you will loop through these rather than manually selecting each one.
-            Console.WriteLine($"1. {simpleQuestion.answers[0]}");
-            Console.WriteLine($"2. {simpleQuestion.answers[1]}");
-            Console.WriteLine($"3. {simpleQuestion.answers[2]}");
+           
 
 
         }
@@ -99,7 +78,22 @@ namespace slu_personal_project_proposal
             // get the users response.
             // Finally, return the users response.
 
-            return 1;
+            // start by validating the input
+            if (q == null) throw new ArgumentNullException("List of options may not be null.");
+            if (q.answers.Count == 0) throw new ArgumentException("The List of options much contain at least 1 option.");
+
+            // If the input is valid, we continue:
+
+            int ix = 1; // Create a variable to track the index
+            foreach (string answer in q.answers)
+            {
+                Console.WriteLine($"{ix}. {answer}"); //Display the current index and option
+                ix = ix + 1; // Increment the index
+            }
+
+            int result = GetValidAnswer(q.answers);
+            return result;
+
         }
 
 
@@ -116,15 +110,47 @@ namespace slu_personal_project_proposal
             // ** Otherwise, display "Invalid choice"
             // * Otherwise, throw new Exception ("Must have at least one answer.")
 
-            // TODO(jcolalrd 2022-02-10): Implement this method first
-            // Here is an example that is similar to what you are doing:
-            // https://jcollard.github.io/IntroToCSharpSite/examples/read-input
-            //
-            // In the example, the code validates the input is greater than 1000.
-            // Your solution should validate that the number is greater than 0 and less or equal to Answers.Count
+            // Create a variable to store the value the user enters
+            int userInput;
 
-            return -1;
+            do
+            {
+                // Asks the user to enter a number
+                Console.WriteLine("Enter a number that is positive.");
+
+                // Read the user input into a string
+                string input = Console.ReadLine();
+
+                // Try to cover the user input into an integer
+                bool isANumber = int.TryParse(input, out userInput);
+
+                if (isANumber == false)
+                {
+                    // If the user didn't enter an integer, display an invalid input.
+                    Console.Error.WriteLine("You did not enter a number.");
+                }
+
+                else if (userInput <= 0 || userInput > Answers.Count)
+                {
+                    Console.WriteLine("Invalid input");
+                }
+            } while (userInput <= 0 || userInput > Answers.Count);
+            // If the userInput is less than 0, we continue the loop
+
+            // Finally, we return the userinput
+            return userInput;
         }
+
+
+
+        // TODO(jcolalrd 2022-02-10): Implement this method first
+        // Here is an example that is similar to what you are doing:
+        // https://jcollard.github.io/IntroToCSharpSite/examples/read-input
+        //
+        // In the example, the code validates the input is greater than 1000.
+        // Your solution should validate that the number is greater than 0 and less or equal to Answers.Count
+
+
 
         /// <summary>
         /// Display the score the play gets.
@@ -149,8 +175,26 @@ namespace slu_personal_project_proposal
             // In your example, you will be searching for the highest scoring
             // result rather than the shortest person
 
-            return "Black Widow";
-        }
+            // First, we much validate the inputs to this method
+            if (Scores == null || Results == null) throw new Exception ("Scores List and Results list must be non-null.");
+            if (Scores.Count == 0) throw new Exception("Cannot process an empty list.");
+            if (Results.Count !=Scores.Count) throw new Exception("Scores and Results lists were not the same length.");
+
+            int resultScores = Scores[0];
+            string resultResults = Results[0];
+
+            int index = 0;
+            foreach (string Result in Results)
+            {
+                if (Results < resultResults)
+                {
+                    resultScores = Scores[index];
+                    resultResults = Results[index];
+                }
+                index = index + 1;
+            }
+
+            return resultScores;
     }
 
     // Feedback(jcollard 2022-01-27): I've added in the Question class for you.

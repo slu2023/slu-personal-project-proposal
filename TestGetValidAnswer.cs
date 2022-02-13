@@ -31,43 +31,50 @@ namespace slu_personal_project_proposal
 
             if (result != expected)
             {
-                Console.Error.WriteLine($"Failure: Expected result to be Myself but it was {result}");
+                Console.Error.WriteLine($"Failure: Expected result to be {expected} but it was {result}");
                 return true;
             }
 
             List<string> testAnswers1;
 
             testAnswers1 = new List<string>();
-            testAnswers1.Add("Myself");
-            testAnswers1.Add("Others");
-            testAnswers1.Add("idk");
+            testAnswers1.Add("UNO");
+            testAnswers1.Add("BIO");
+            testAnswers1.Add("TRI");
+            testAnswers1.Add("4+");
 
             // TODO(jcollard 2022-02-10): Give instructions to your testser
+
+            Console.WriteLine("1. Enter 0. This will be an invalid input.");
+            Console.WriteLine("2. Enter 4. This will be valid");
 
             int result1 = Program.GetValidAnswer(testAnswers);
             int expected1 = 0;
 
             if (result1 != expected1)
             {
-                Console.Error.WriteLine($"Failure: Expected result to be Myself but it was {result1}");
+                Console.Error.WriteLine($"Failure: Expected result to be {expected1} but it was {result1}");
                 return true;
             }
 
             List<string> testAnswers2;
 
             testAnswers2 = new List<string>();
-            testAnswers2.Add("Myself");
-            testAnswers2.Add("Others");
-            testAnswers2.Add("idk");
+            testAnswers2.Add("≤13");
+            testAnswers2.Add("13-25");
+            testAnswers2.Add("≥25");
 
             // TODO(jcollard 2022-02-10): Give instructions to your testser
 
+            Console.WriteLine("1. Enter -1. This will be an invalid input.");
+            Console.WriteLine("2. Enter 1. This will be valid");
+
             int result2 = Program.GetValidAnswer(testAnswers);
-            int expected2 = -1;
+            int expected2 = 1;
 
             if (result2 != expected2)
             {
-                Console.Error.WriteLine($"Failure: Expected result to be Myself but it was {result1}");
+                Console.Error.WriteLine($"Failure: Expected result to be {expected2} but it was {result2}");
                 return false;
             }
             

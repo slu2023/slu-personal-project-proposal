@@ -20,6 +20,8 @@ namespace slu_personal_project_proposal
             // That said, I don't think you actually need this list here.
             List<string> options = new List<string>();
 
+            string Question;
+
             Question testQuestion = new Question();
             testQuestion.question = "How are you feeling today?";
             testQuestion.answers.Add("GREAT!");
@@ -79,7 +81,7 @@ namespace slu_personal_project_proposal
             Console.WriteLine($"The method returned {result}.");
             Console.WriteLine("Does this method appear to be working?");
             
-            return false;
+            return true;
 
             // Load test_scores.txt.
 
