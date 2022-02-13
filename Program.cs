@@ -14,8 +14,13 @@ namespace slu_personal_project_proposal
                 TestAll();
                 return; // Exits the program
             }
-           
 
+            Question testQuestion = new Question();
+            testQuestion.question = "What's your age range?";
+            testQuestion.question = "How are you feeling today?";
+
+            Question:
+            // Can you help me write an example about how I can loop through all my questions answers and results?
 
         }
 
