@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic; // Feedback(jcollard 2022-01-27): This line makes it so you can use the List data type
 
 namespace slu_personal_project_proposal
@@ -19,8 +20,57 @@ namespace slu_personal_project_proposal
             testQuestion.question = "What's your age range?";
             testQuestion.question = "How are you feeling today?";
 
-            Question:
+            //Question:
             // Can you help me write an example about how I can loop through all my questions answers and results?
+
+            // TODO(jcollard 2022-02-13):
+
+            // 1. Start by creating a List<Question> to store all of your questions
+            // List<Question> allQuestions = new List<Question>();
+
+            // 2. Create a question
+            // Question AgeQuesiton = new Question();
+            
+            // 3. Specify th eactual question
+            // AgeQuesiton.question = "How old are you?";
+
+            // 4. Specify the possible answers
+            // AgeQuesiton.answers.Add("1. Option 1");
+            // AgeQuesiton.answers.Add("2. Option 2");
+
+            // 5. Add the question to allQuestions
+            // allQuestions.Add(AgeQuesiton);
+
+            // 6. Repeat steps 2 - 5 for each question
+
+            // 7. Create a List<int> to track your scores
+            // List<int> scores = new List<int>();
+            
+            // 8. Initialize each score to 0
+            // scores.Add(0);
+            // scores.Add(0); // repeat for each result
+
+            // 9. Loop through each of the questions in your quesiton list
+
+            // foreach (Question q in allQuestions)
+                //9 a. Ask the question
+                //int result = AskQuestion(q);
+
+                //9 a. Increase the related result
+                //scores[result] = scores[result] + 1;
+
+            // 10. Create a List<string> of the results
+            // List<string> results = new List<string>();
+            
+            // 11. Add the results to the list
+            // results.Add("Banana Guard");;
+
+            // 12. Calculate the result
+            // string finalResult = GetResult(scores, results);
+
+            // 13. Display the final result
+            // Console.WriteLine($"Your personality is: {finalResult}");
+            
 
         }
 
@@ -189,9 +239,9 @@ namespace slu_personal_project_proposal
             string resultResults = Results[0];
 
             int index = 0;
-            foreach (string Result in Results)
+            foreach (string Result in Results) // TODO(jcollard 2022-02-13): You want to loop through the scores here rather than the results
             {
-                if (Results < resultResults)
+                if (Results < resultResults) // TODO(jcollard 2022-02-13): You want to check if score > resultScores
                 {
                     resultScores = Scores[index];
                     resultResults = Results[index];
@@ -199,7 +249,7 @@ namespace slu_personal_project_proposal
                 index = index + 1;
             }
 
-            return resultScores;
+            return resultScores; // TODO(jcollard 2022-02-13): Finally, you should return resultResults
     }
 
     // Feedback(jcollard 2022-01-27): I've added in the Question class for you.
