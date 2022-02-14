@@ -18,9 +18,7 @@ namespace slu_personal_project_proposal
             // TODO(jcollard 2022-02-03): You need to import the list library to use List.
             // Add using `using System.Collections.Generic;` to the top of this file
             // That said, I don't think you actually need this list here.
-            List<string> options = new List<string>();
-
-            string Question;
+            // List<string> options = new List<string>();
 
             Question testQuestion = new Question();
             testQuestion.question = "How are you feeling today?";
