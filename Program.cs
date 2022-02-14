@@ -8,7 +8,7 @@ namespace slu_personal_project_proposal
     {
         private static object testQuestion;
 
-        static void Main(string[] args, object testQuestion)
+        static void Main(string[] args)
         {
             // Checks if the user added a command line argument
             // Also checks if the first argument is "test"
@@ -26,30 +26,84 @@ namespace slu_personal_project_proposal
             // 1. Start by creating a List<Question> to store all of your questions
             // List<Question> allQuestions = new List<Question>();
 
-            List<string> allQuestions = new List<string>();
+            List<Question> allQuestions = new List<Question>();
 
             // 2. Create a question
             // Question QuizQuesiton = new Question();
 
-            Question Question = new Question();    
+            Question feelingQuestion = new Question();
 
             // 3. Specify th eactual question
             // QuizQuesiton.question = "How old are you?";
 
-            Question.question = "How are you feeling today?";
+            feelingQuestion.question = "How are you feeling today?";
 
             // 4. Specify the possible answers
             // AgeQuesiton.answers.Add("1. Option 1");
             // AgeQuesiton.answers.Add("2. Option 2");
 
-            object p = testQuestion.answers.Add("GREAT!");
-            object p1 = testQuestion.answers.Add("So So");
-            object p2 = testQuestion.answers.Add("Kinda ok");
+            feelingQuestion.answers.Add("GREAT!");
+            feelingQuestion.answers.Add("So So");
+            feelingQuestion.answers.Add("Kinda ok");
 
             // 5. Add the question to allQuestions
             // allQuestions.Add(AgeQuesiton);
 
-            allQuestions.Add(testQuestion);
+            allQuestions.Add(feelingQuestion);
+
+
+
+
+
+            Question ageQuestion = new Question();
+            ageQuestion.question = "What is your age range?";
+            ageQuestion.answers.Add("<13!");
+            ageQuestion.answers.Add("13-25");
+            ageQuestion.answers.Add(">25");
+            allQuestions.Add(ageQuestion);
+
+            Question relationQuestion = new Question();
+            relationQuestion.question = "Do you current have a partner?";
+            relationQuestion.answers.Add("NAR");
+            relationQuestion.answers.Add("YEA! IVE A BF");
+            relationQuestion.answers.Add("YEA! IVE A GF");
+            allQuestions.Add(relationQuestion);
+
+            Question emotionQuestion = new Question();
+            emotionQuestion.question = "Do you have a crush on somebody?";
+            emotionQuestion.answers.Add("NAR");
+            emotionQuestion.answers.Add("YEA");
+            emotionQuestion.answers.Add("MAYBE?");
+            allQuestions.Add(emotionQuestion);
+
+            Question balanceQuestion = new Question();
+            balanceQuestion.question = "Which of the following consider the most important to you?";
+            balanceQuestion.answers.Add("family");
+            balanceQuestion.answers.Add("work");
+            balanceQuestion.answers.Add("love");
+
+            allQuestions.Add(balanceQuestion);
+
+            //     List<int> testScores1 = new List<int>();
+            //     testScores.Add(1);
+            //     testScores.Add(3);
+            //     testScores.Add(5);
+            //    System.Collections.IList list1 = allQuestions;
+            //     for (int i = 0; i < list.Count; i++)
+            //     {
+            //         Question q = (Question)list[i];
+            //         int result = AskQuestion(q);
+
+            //         testScores[result] = testScores[result] + 1;
+            //     List<string> testResults1 = new List<string>();
+            //     testResults.Add("SEED");
+            //     testResults.Add("TREE");
+            //     testResults.Add("BUILDING");
+            //     string finalResult1 = GetResult(testScores, testResults);
+            //     Console.WriteLine($"Your personality is: {finalResult}");
+
+            //     }
+
 
             // 6. Repeat steps 2 - 5 for each question
 
@@ -62,33 +116,34 @@ namespace slu_personal_project_proposal
             // scores.Add(0);
             // scores.Add(0); // repeat for each result
 
-            testScores.Add(5);
-            testScores.Add(3);
-            testScores.Add(1);
+            testScores.Add(0);
+            testScores.Add(0);
+            testScores.Add(0);
+
 
             // 9. Loop through each of the questions in your quesiton list
 
             foreach (Question q in allQuestions)
-                //9 a. Ask the question
+            //9 a. Ask the question
             {
                 int result = AskQuestion(q);
 
                 //9 a. Increase the related result
-                testScores[result] = testScores[result] + 1;
+                testScores[result - 1] = testScores[result - 1] + 1;
             }
 
             // 10. Create a List<string> of the results
             // List<string> results = new List<string>();
-            
+
             List<string> testResults = new List<string>();
 
-            
+
             // 11. Add the results to the list
             // results.Add("Banana Guard");;
 
-            testResults.Add("CSP");
-            testResults.Add("CSA");
-            testResults.Add("POST");
+            testResults.Add("SELF THE HAPPY");
+            testResults.Add("GIVE IT AWAY");
+            testResults.Add("ROUGH THE LOVE");
 
             // 12. Calculate the result
 
@@ -97,8 +152,6 @@ namespace slu_personal_project_proposal
             // 13. Display the final result
 
             Console.WriteLine($"Your personality is: {finalResult}");
-            
-
         }
 
         public static void TestAll()
@@ -166,6 +219,7 @@ namespace slu_personal_project_proposal
 
             // If the input is valid, we continue:
 
+            Console.WriteLine(q.question);
             int ix = 1; // Create a variable to track the index
             foreach (string answer in q.answers)
             {
@@ -258,17 +312,17 @@ namespace slu_personal_project_proposal
             // result rather than the shortest person
 
             // First, we much validate the inputs to this method
-            if (Scores == null || Results == null) throw new Exception ("Scores List and Results list must be non-null.");
+            if (Scores == null || Results == null) throw new Exception("Scores List and Results list must be non-null.");
             if (Scores.Count == 0) throw new Exception("Cannot process an empty list.");
-            if (Results.Count !=Scores.Count) throw new Exception("Scores and Results lists were not the same length.");
+            if (Results.Count != Scores.Count) throw new Exception("Scores and Results lists were not the same length.");
 
             int resultScores = Scores[0];
             string resultResults = Results[0];
 
             int index = 0;
-            foreach (string Result in Results) // TODO(jcollard 2022-02-13): You want to loop through the scores here rather than the results
+            foreach (int score in Scores) // TODO(jcollard 2022-02-13): You want to loop through the scores here rather than the results
             {
-                if (Scores > resultScores) // TODO(jcollard 2022-02-13): You want to check if score > resultScores
+                if (score > resultScores) // TODO(jcollard 2022-02-13): You want to check if score > resultScores
                 {
                     resultScores = Scores[index];
                     resultResults = Results[index];
@@ -277,6 +331,9 @@ namespace slu_personal_project_proposal
             }
 
             return resultResults; // TODO(jcollard 2022-02-13): Finally, you should return resultResults
+        }
+
+
     }
 
     // Feedback(jcollard 2022-01-27): I've added in the Question class for you.
