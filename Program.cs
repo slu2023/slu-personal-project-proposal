@@ -6,7 +6,9 @@ namespace slu_personal_project_proposal
 {
     class Program
     {
-        static void Main(string[] args)
+        private static object testQuestion;
+
+        static void Main(string[] args, object testQuestion)
         {
             // Checks if the user added a command line argument
             // Also checks if the first argument is "test"
@@ -16,10 +18,6 @@ namespace slu_personal_project_proposal
                 return; // Exits the program
             }
 
-            Question testQuestion = new Question();
-            testQuestion.question = "What's your age range?";
-            testQuestion.question = "How are you feeling today?";
-
             //Question:
             // Can you help me write an example about how I can loop through all my questions answers and results?
 
@@ -28,48 +26,77 @@ namespace slu_personal_project_proposal
             // 1. Start by creating a List<Question> to store all of your questions
             // List<Question> allQuestions = new List<Question>();
 
+            List<string> allQuestions = new List<string>();
+
             // 2. Create a question
-            // Question AgeQuesiton = new Question();
-            
+            // Question QuizQuesiton = new Question();
+
+            Question Question = new Question();    
+
             // 3. Specify th eactual question
-            // AgeQuesiton.question = "How old are you?";
+            // QuizQuesiton.question = "How old are you?";
+
+            Question.question = "How are you feeling today?";
 
             // 4. Specify the possible answers
             // AgeQuesiton.answers.Add("1. Option 1");
             // AgeQuesiton.answers.Add("2. Option 2");
 
+            object p = testQuestion.answers.Add("GREAT!");
+            object p1 = testQuestion.answers.Add("So So");
+            object p2 = testQuestion.answers.Add("Kinda ok");
+
             // 5. Add the question to allQuestions
             // allQuestions.Add(AgeQuesiton);
+
+            allQuestions.Add(testQuestion);
 
             // 6. Repeat steps 2 - 5 for each question
 
             // 7. Create a List<int> to track your scores
             // List<int> scores = new List<int>();
-            
+
+            List<int> testScores = new List<int>();
+
             // 8. Initialize each score to 0
             // scores.Add(0);
             // scores.Add(0); // repeat for each result
 
+            testScores.Add(5);
+            testScores.Add(3);
+            testScores.Add(1);
+
             // 9. Loop through each of the questions in your quesiton list
 
-            // foreach (Question q in allQuestions)
+            foreach (Question q in allQuestions)
                 //9 a. Ask the question
-                //int result = AskQuestion(q);
+            {
+                int result = AskQuestion(q);
 
                 //9 a. Increase the related result
-                //scores[result] = scores[result] + 1;
+                testScores[result] = testScores[result] + 1;
+            }
 
             // 10. Create a List<string> of the results
             // List<string> results = new List<string>();
             
+            List<string> testResults = new List<string>();
+
+            
             // 11. Add the results to the list
             // results.Add("Banana Guard");;
 
+            testResults.Add("CSP");
+            testResults.Add("CSA");
+            testResults.Add("POST");
+
             // 12. Calculate the result
-            // string finalResult = GetResult(scores, results);
+
+            string finalResult = GetResult(testScores, testResults);
 
             // 13. Display the final result
-            // Console.WriteLine($"Your personality is: {finalResult}");
+
+            Console.WriteLine($"Your personality is: {finalResult}");
             
 
         }
@@ -241,7 +268,7 @@ namespace slu_personal_project_proposal
             int index = 0;
             foreach (string Result in Results) // TODO(jcollard 2022-02-13): You want to loop through the scores here rather than the results
             {
-                if (Results < resultResults) // TODO(jcollard 2022-02-13): You want to check if score > resultScores
+                if (Scores > resultScores) // TODO(jcollard 2022-02-13): You want to check if score > resultScores
                 {
                     resultScores = Scores[index];
                     resultResults = Results[index];
@@ -249,7 +276,7 @@ namespace slu_personal_project_proposal
                 index = index + 1;
             }
 
-            return resultScores; // TODO(jcollard 2022-02-13): Finally, you should return resultResults
+            return resultResults; // TODO(jcollard 2022-02-13): Finally, you should return resultResults
     }
 
     // Feedback(jcollard 2022-01-27): I've added in the Question class for you.
