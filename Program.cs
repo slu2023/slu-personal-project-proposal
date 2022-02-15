@@ -222,10 +222,11 @@ namespace slu_personal_project_proposal
         public static int AskQuestion(Question q)
         {
 
-            // 1. Display q.Question
-            // 2. Loop through for each answer in q.Question
-            // 3. Display answer
-            // 4. Shows int selected = GetValidAnswer(q.Answers)
+            // 1. Display the question
+            // 2. Loop through for each answer in the question
+            // 3. Display the answer
+            // 4. Get user input
+            // 5. return the result
 
             // TODO(jcollard 2022-02-10): Implement this method second.
             // Here is an example that is similar to what you need to do:
