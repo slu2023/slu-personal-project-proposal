@@ -78,11 +78,34 @@ namespace slu_personal_project_proposal
 
             Question balanceQuestion = new Question();
             balanceQuestion.question = "Which of the following consider the most important to you?";
-            balanceQuestion.answers.Add("family");
-            balanceQuestion.answers.Add("work");
-            balanceQuestion.answers.Add("love");
-
+            balanceQuestion.answers.Add("Family");
+            balanceQuestion.answers.Add("Work");
+            balanceQuestion.answers.Add("Love");
             allQuestions.Add(balanceQuestion);
+
+
+            Question dreamQuestion = new Question();
+            dreamQuestion.question = "Which of the following do you feel yourself more enjoyed?";
+            dreamQuestion.answers.Add("Rich enough to play high-tech electrical devices");
+            dreamQuestion.answers.Add("Traveling with someone you really want to travel with");
+            dreamQuestion.answers.Add("Spiritual abundance, I AM AWESOME!");
+            allQuestions.Add(dreamQuestion);
+
+            Question workoutQuestion = new Question();
+            workoutQuestion.question = "Do you workout very often?";
+            workoutQuestion.answers.Add("Yes, I'm in good shape.");
+            workoutQuestion.answers.Add("Not really, but I'm okay");
+            workoutQuestion.answers.Add("No, I hate it!");
+            allQuestions.Add(workoutQuestion);
+
+            Question likeQuestion = new Question();
+            likeQuestion.question = "Which of the following do you like the most?";
+            likeQuestion.answers.Add("Language and Art");
+            likeQuestion.answers.Add("Math and Science");
+            likeQuestion.answers.Add("I'm a D1 sportsman buddy!");
+            allQuestions.Add(likeQuestion);
+
+            
 
             //     List<int> testScores1 = new List<int>();
             //     testScores.Add(1);
@@ -141,9 +164,9 @@ namespace slu_personal_project_proposal
             // 11. Add the results to the list
             // results.Add("Banana Guard");;
 
-            testResults.Add("SELF THE HAPPY");
-            testResults.Add("GIVE IT AWAY");
-            testResults.Add("ROUGH THE LOVE");
+            testResults.Add("There's few people living in this life mode as you do.  This is not a bad thing.  You are a very powerful person and it's strong in the inside.  Explore your loves, whatever they are, they must be really cool!");
+            testResults.Add("I'm so proud of you for your passion towards the things you truly enjoy.  There's plenty of time and really worth for you to despite the right and wrongs.  Break a leg!");
+            testResults.Add("Remember that everything is temporary.  People says that the best way of life is to have hot and cold, high and low, black and white, and happy and sad.  But either waiting for the surprises, or going for the surprises!");
 
             // 12. Calculate the result
 
@@ -151,7 +174,7 @@ namespace slu_personal_project_proposal
 
             // 13. Display the final result
 
-            Console.WriteLine($"Your personality is: {finalResult}");
+            Console.WriteLine($"Your personality: {finalResult}");
         }
 
         public static void TestAll()
