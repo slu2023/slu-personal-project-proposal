@@ -1,4 +1,4 @@
-# MadLibs
+# Personality Quiz
 
 ## Description
 

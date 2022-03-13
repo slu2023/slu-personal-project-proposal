@@ -139,6 +139,8 @@ int result = AskQuestion(q);
 Describes in general what the identified procedure does and how it contributes to the overall functionality of the program.
 
 Given a series of questions to the user, score the points when the player enters an answer.  This is the main functionality of my program.
+“The AskQuestion method accepts a Question as a parameter, displays the question, displays a list of answers, then waits for the user to select an answer. Finally, it returns the number that the player entered.”
+
 
 ### 3c iv.
 
